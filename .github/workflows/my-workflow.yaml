@@ -1,12 +1,22 @@
-name: 03-Understanding Runners
+name: 03-Understanding Runners Ubantu & Win
 on: push
 jobs:
-  job:
+  Ubuntu_runner_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Runner Details
+      - name: Print ubuntu Runner Details
         run: |
-          echo "Workflow is executing in Github Runners"
+          echo "Workflow executing in ubuntu-github Runners"
+          echo "Github Runners Name is: $RUNNER_Name"
+          echo "Github Runners OS is: $RUNNER_OS"
+          echo "Github Runners Architecture is: $RUNNER_ARCH"
+  Windows_runner_job:
+    runs-on: windows-latest
+    steps:
+      - name: Print windows Runner Details
+        shell: bash
+        run: |
+          echo "Workflow executing in windows-github Runners"
           echo "Github Runners Name is: $RUNNER_Name"
           echo "Github Runners OS is: $RUNNER_OS"
           echo "Github Runners Architecture is: $RUNNER_ARCH"
