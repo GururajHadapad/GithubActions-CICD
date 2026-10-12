@@ -1,13 +1,12 @@
-name: 02-Understanding Events
-on:
-  workflow_dispatch:
-  push:
-  pull_request:
-  schedule:
-    - cron: "*/10 * * * *"
+name: 03-Understanding Runners
+on: push
 jobs:
-  event-info-job:
+  job:
     runs-on: ubuntu-latest
     steps:
-      - name: Step 1
-        run: echo "My trigger is ${{github.event_name}} event"
+      - name: Print Runner Details
+        run: |
+          echo "Workflow is executing in Github Runners"
+          echo "Github Runners Name is: $RUNNER_Name"
+          echo "Github Runners OS is: $RUNNER_OS"
+          echo "Github Runners Architecture is: $RUNNER_ARCH"
